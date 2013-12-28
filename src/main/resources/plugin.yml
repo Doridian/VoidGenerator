@@ -1,0 +1,4 @@
+name: VoidGenerator
+main: de.doridian.voidgenerator.VoidGenerator
+version: 1.0.0
+load: startup
