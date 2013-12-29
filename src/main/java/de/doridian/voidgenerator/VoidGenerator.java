@@ -1,11 +1,17 @@
 package de.doridian.voidgenerator;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.*;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -53,6 +59,24 @@ public class VoidGenerator extends JavaPlugin implements Listener {
 	@EventHandler
 	public void onBlockIgniteEvent(BlockIgniteEvent event) {
 		event.setCancelled(true);
+	}
+
+	@EventHandler
+	public void onItemDropEvent(PlayerDropItemEvent event) {
+		event.setCancelled(true);
+	}
+
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event) {
+		Player player = event.getPlayer();
+		player.getInventory().clear();
+		player.setGameMode(GameMode.ADVENTURE);
+	}
+
+	@EventHandler
+	public void onPlayerDamage(EntityDamageByEntityEvent event) {
+		event.setCancelled(true);
+		event.setDamage(0);
 	}
 
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) {
