@@ -15,28 +15,11 @@ public class VoidGenerator extends JavaPlugin {
         private final List<BlockPopulator> populators = new ArrayList<>();
         private final byte[] generatorArray = new byte[32768];
 
-        @Override
-        public boolean canSpawn(World world, int x, int z) {
-            return true;
-        }
-
-        @Override
-        public List<BlockPopulator> getDefaultPopulators(World world) {
-            return populators;
-        }
-
-        @Override
-        public Location getFixedSpawnLocation(World world, Random random) {
-            return new Location(world, 0.0D, 66.0D, 0.0D);
-        }
-
-        @Override
-        public byte[] generate(World world, Random random, int x, int z) {
-            return generatorArray;
-        }
+        @Override public boolean canSpawn(World world, int x, int z) { return true; }
+        @Override public List<BlockPopulator> getDefaultPopulators(World world) { return populators; }
+        @Override public Location getFixedSpawnLocation(World world, Random random) { return new Location(world, 0.0D, 66.0D, 0.0D); }
+        @Override public byte[] generate(World world, Random random, int x, int z) { return generatorArray; }
     };
 
-	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) {
-        return chunkGenerator;
-	}
+	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) { return chunkGenerator; }
 }
