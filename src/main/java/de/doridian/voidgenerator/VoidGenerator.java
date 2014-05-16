@@ -2,7 +2,6 @@ package de.doridian.voidgenerator;
 
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.event.Listener;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class VoidGenerator extends JavaPlugin implements Listener {
+public class VoidGenerator extends JavaPlugin {
     private final ChunkGenerator chunkGenerator = new ChunkGenerator() {
         private final List<BlockPopulator> populators = new ArrayList<>();
         private final byte[] generatorArray = new byte[32768];
