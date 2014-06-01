@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with VoidGenerator.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.doridian.voidgenerator;
+package com.foxelbox.voidgenerator;
 
 import org.bukkit.Location;
 import org.bukkit.World;
